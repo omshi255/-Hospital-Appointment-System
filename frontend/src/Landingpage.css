@@ -1,0 +1,116 @@
+.landing-container {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f4f6f9;
+  color: #222;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* HERO SECTION */
+.hero {
+  background-color: orange;
+  color: white;
+  padding: 100px 20px;
+  text-align: center;
+  animation: fadeInDown 1s ease;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.hero p {
+  font-size: 1.25rem;
+  margin-bottom: 40px;
+  opacity: 0.9;
+}
+
+.btn-primary {
+  background-color: white;
+  color: orange;
+  padding: 14px 30px;
+  border: none;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: #e1f5fe;
+  transform: scale(1.05);
+}
+
+/* FEATURES SECTION */
+.features {
+  padding: 60px 20px;
+  text-align: center;
+  background-color: #fff;
+}
+
+.features h2 {
+  font-size: 2.25rem;
+  margin-bottom: 40px;
+  color:orange;
+}
+
+.feature-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.feature-card {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 15px;
+  width: 320px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.feature-card h3 {
+  color: orange;
+  margin-bottom: 10px;
+}
+
+.feature-card p {
+  color: #555;
+  line-height: 1.6;
+}
+
+/* FOOTER */
+.footer {
+  background: orange;
+  color: white;
+  text-align: center;
+  padding: 20px 10px;
+  font-size: 0.95rem;
+  margin-top: auto;
+  letter-spacing: 0.5px;
+}
+
+/* ANIMATIONS */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
