@@ -4,12 +4,12 @@ import './AllUsers.css';
 
 const AllUsers = () => {
   const [users, setUsers] = useState([]);
-
+ const baseURL = import.meta.env.VITE_API_BASE_URL;
   useEffect(() => {
     const fetchUsers = async () => {
       try {
         const token = localStorage.getItem("token");
-        const res = await axios.get('https://hospital-appointment-system-mern-backend.onrender.com/api/users/users', {
+        const res = await axios.get(`${baseURL}/api/users/users`, {
           headers: { Authorization: `Bearer ${token}` }
         });
         setUsers(res.data);

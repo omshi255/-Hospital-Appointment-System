@@ -6,10 +6,11 @@ import "./Profile.css";
 const Profile = () => {
   const [user, setUser] = useState(null);
   const navigate = useNavigate();
+  const baseURL = import.meta.env.VITE_API_BASE_URL; // Use environment variable for base URL
   const fetchProfile = async () => {
     try {
       const token = localStorage.getItem("token");
-      const res = await axios.get("https://hospital-appointment-system-mern-backend.onrender.com/api/users/profile", {
+      const res = await axios.get(`${baseURL}/api/users/profile`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

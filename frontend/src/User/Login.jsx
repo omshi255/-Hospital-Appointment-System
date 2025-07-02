@@ -7,7 +7,7 @@ const Login = () => {
   const [formData, setFormData] = useState({ email: '', password: '' });
   const [isLoggedIn, setIsLoggedIn] = useState(!!localStorage.getItem("token"));
   const navigate = useNavigate(); 
-
+  const baseURL = import.meta.env.VITE_API_BASE_URL; // Use environment variable for base URL
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -15,7 +15,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('https://hospital-appointment-system-mern-backend.onrender.com/api/users/login', formData);
+      const res = await axios.post(`${baseURL}/api/users/login`, formData);
       localStorage.setItem('token', res.data.token);
       setIsLoggedIn(true);
       alert(res.data.message);
@@ -27,7 +27,7 @@ const Login = () => {
 
   const handleLogout = async () => {
     try {
-      await axios.post("https://hospital-appointment-system-mern-backend.onrender.com/api/users/logout");
+      await axios.post(`${baseURL}/api/users/logout`);
       localStorage.removeItem("token");
       setIsLoggedIn(false);
       alert("Logout successful");

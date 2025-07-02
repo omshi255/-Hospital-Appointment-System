@@ -11,7 +11,7 @@ const AppointmentPage = () => {
   });
   const [appointments, setAppointments] = useState([]);
   const token = localStorage.getItem('token');
-
+ const baseURL = import.meta.env.VITE_API_BASE_URL;
   // Fetch appointments on mount
   useEffect(() => {
     fetchAppointments();
@@ -19,7 +19,7 @@ const AppointmentPage = () => {
 
   const fetchAppointments = async () => {
     try {
-      const res = await axios.get('https://hospital-appointment-system-mern-backend.onrender.com/api/appointments', {
+      const res = await axios.get(`${baseURL}/api/appointments`, {
         headers: {
           Authorization: `Bearer ${token}`
         }

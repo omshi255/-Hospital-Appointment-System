@@ -15,12 +15,12 @@ const Register = () => {
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
-
+const baseURL = import.meta.env.VITE_API_BASE_URL;
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const res = await axios.post(
-        "https://hospital-appointment-system-mern-backend.onrender.com/api/users/register",
+        `${baseURL}/api/users/register`,
         formData
       );
       alert(res.data.message);
@@ -36,7 +36,7 @@ const Register = () => {
 
   const handleLogout = async () => {
     try {
-      await axios.post("https://hospital-appointment-system-mern-backend.onrender.com/api/users/logout");
+      await axios.post(`${baseURL}/api/users/logout`);
       localStorage.removeItem("token");
       setIsLoggedIn(false);
       alert("Logout successful");

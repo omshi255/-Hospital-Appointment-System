@@ -6,7 +6,7 @@ import Login from './User/Login.jsx';
 import Navbar from './Navbar.jsx';
 import AllUsers from './User/Allusers.jsx';
 import LandingPage from './Landingpage.jsx';
-import Appointmentform from './appointments/appointmentform.jsx';
+import Appointmentform from './appointments/Appointmentform.jsx';
 import Profile from './User/Profile.jsx';
 
 function App() {
