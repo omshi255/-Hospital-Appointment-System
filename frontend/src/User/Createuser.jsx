@@ -20,7 +20,7 @@ const Register = () => {
     e.preventDefault();
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/users/register",
+        "https://hospital-appointment-system-mern-backend.onrender.com/api/users/register",
         formData
       );
       alert(res.data.message);
@@ -36,7 +36,7 @@ const Register = () => {
 
   const handleLogout = async () => {
     try {
-      await axios.post("http://localhost:5000/api/users/logout");
+      await axios.post("https://hospital-appointment-system-mern-backend.onrender.com/api/users/logout");
       localStorage.removeItem("token");
       setIsLoggedIn(false);
       alert("Logout successful");

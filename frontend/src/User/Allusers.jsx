@@ -9,7 +9,7 @@ const AllUsers = () => {
     const fetchUsers = async () => {
       try {
         const token = localStorage.getItem("token");
-        const res = await axios.get('http://localhost:5000/api/users/users', {
+        const res = await axios.get('https://hospital-appointment-system-mern-backend.onrender.com/api/users/users', {
           headers: { Authorization: `Bearer ${token}` }
         });
         setUsers(res.data);

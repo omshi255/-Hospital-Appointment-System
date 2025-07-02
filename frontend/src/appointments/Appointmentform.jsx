@@ -19,7 +19,7 @@ const AppointmentPage = () => {
 
   const fetchAppointments = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/appointments', {
+      const res = await axios.get('https://hospital-appointment-system-mern-backend.onrender.com/api/appointments', {
         headers: {
           Authorization: `Bearer ${token}`
         }

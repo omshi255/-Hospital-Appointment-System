@@ -15,7 +15,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('http://localhost:5000/api/users/login', formData);
+      const res = await axios.post('https://hospital-appointment-system-mern-backend.onrender.com/api/users/login', formData);
       localStorage.setItem('token', res.data.token);
       setIsLoggedIn(true);
       alert(res.data.message);
@@ -27,7 +27,7 @@ const Login = () => {
 
   const handleLogout = async () => {
     try {
-      await axios.post("http://localhost:5000/api/users/logout");
+      await axios.post("https://hospital-appointment-system-mern-backend.onrender.com/api/users/logout");
       localStorage.removeItem("token");
       setIsLoggedIn(false);
       alert("Logout successful");
