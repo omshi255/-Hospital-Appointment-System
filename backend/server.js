@@ -3,6 +3,18 @@ import connectToDatabase from './dbconn.js';
 import router from './routes/user.routes.js';
 import cors from 'cors';
 import appointmentRoutes from './routes/appointmentroute.js';
+
+
+const allowedOrigins = [
+  'https://hospital-appointment-system-mern-frontend.onrender.com/'
+];
+
+app.use(cors({
+  origin: allowedOrigins,
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true
+}));
+
 const app = express();
 app.use(cors());
 import dotenv from 'dotenv';    
